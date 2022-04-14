@@ -1,0 +1,3 @@
+rep "CAVSAFE@nicoaugustineosteria@cloud"
+  path "/"
+    smartbranch "/main"
