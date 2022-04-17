@@ -16,11 +16,6 @@ public class PlayFabControls : MonoBehaviour
 
     // Register/Login/ResetPassword (Episode 6)
     public void RegisterButton() {
-        IDictionary (passwordInput.text.Length < 6){
-            messageText.text = "Passsword too short!";
-            return;
-        }
-
         var request = new RegisterPlayFabUserRequest{
             Email = emailInput.text,
             Password = passwordInput.text,
@@ -33,39 +28,75 @@ public class PlayFabControls : MonoBehaviour
     {
         messageText.text = "Registered and logged in!";
     }
-    public void LoginButton() { }
-    public void ResetPasswordButton() { }
-    void OnPasswordReset(SendAccountRecoveryEmailResult result) { }
+    public void LoginButton() {
+        var request = new LoginWithEmailAddressRequest
+        {
+            emailInput = emailInput.text,
+            passwordInput = passwordInput.text
+        };
+        PlayFabClientAPI.LoginWithEmailAddress(request, OnLoginSuccess, OnError);
+    }
+
+    public void ResetPasswordButton() {
+        var request = new SendAccountRecoveryEmailRequest
+        {
+            emailInput = emailInput.text,
+            TitleId = "70500"
+        };
+        PlayFabClientAPI.SendAccountRecoveryEmail(request, OnPasswordReset, OnError);
+    }
+    void OnPasswordReset(SendAccountRecoveryEmailResult result) {
+        messageText.text = "Password reset mail sent!";
+    }
 
 
 
-
-/*
-    #region previousEpisodes
-    // Logging in (Episode 2)
+    //Logging in (Episode 2)
     void Start()
-    void Login()
-    void OnLoginSuccess(LoginResult result);
+    {
+        Login();
+    }
 
-    //Player data (Episode 3)
-    public void GetAppearance()
-    void OnDataRecieved(GetUserDataResult result)
-    public void SaveAppearance()
-    void OnDataSend(UpdateUserDataResult result)
+    void Login(){
+        var request = new LoginWithCustomIDRequest
+        {
+            CustomId = SystemInfo.deviceUniqueIdentifier,
+            CreateAccount = true
+        };
+        PlayFabClientAPI.LoginWithCustomID(request, OnLoginSuccess, OnError);
+    }
 
-    //Title data (Episode 4)
-    void GetTitleData()
-    void OnCharactersDataRecieved(GetUserDataResult result)
-    #endregion
-*/
+    void OnLoginSuccess(LoginResult result)
+    {
+        Debug.Log("Successful login/account create!");
+    }
 
-    //Other
     void OnError(PlayFabError error)
     {
-        messageText.text = error.ErrorMessage;
+        Debug.Log("Error while loggin in/creating account!");
         Debug.Log(error.GenerateErrorReport());
     }
 
+    /*
+        //Player data (Episode 3)
+        public void GetAppearance()
+        void OnDataRecieved(GetUserDataResult result)
+        public void SaveAppearance()
+        void OnDataSend(UpdateUserDataResult result)
+
+        //Title data (Episode 4)
+        void GetTitleData()
+        void OnCharactersDataRecieved(GetUserDataResult result)
+
+
+
+        //Other
+        void OnError(PlayFabError error)
+        {
+            messageText.text = error.ErrorMessage;
+            Debug.Log(error.GenerateErrorReport());
+        }
+    */
 
 
 

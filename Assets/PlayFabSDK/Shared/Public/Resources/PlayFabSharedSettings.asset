@@ -15,7 +15,7 @@ MonoBehaviour:
   TitleId: D15F2
   DeveloperSecretKey: 1U81NWDJGUGJ36NM7ZIXX7YUZARIBEQCTTCED46N7WD4ZXHMC7
   ProductionEnvironmentUrl: 
-  RequestType: 0
+  RequestType: 2
   DisableDeviceInfo: 0
   DisableFocusTimeCollection: 0
   RequestTimeout: 2000
