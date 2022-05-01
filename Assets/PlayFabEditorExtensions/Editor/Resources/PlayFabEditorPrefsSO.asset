@@ -15,9 +15,9 @@ MonoBehaviour:
   DevAccountEmail: nicoaugustineosteria@gmail.com
   DevAccountToken: ks399ps87e69wb4j93omm79afd3gz9sbtexkobsrx6iqzgoxyg7yhkhxdyp4hsjr9a4o63w46spd35rxmh5h8bwypjap3j9tuq47gy6sdgck73z7r8ut5y78jodnmdh3e8b9pd8q5otrnewg3cchprhwcwg19f59apfgynbbh7rx6q5sar84dwucc4q1r5qacdu8yfy8
   SelectedStudio: CavSafe
-  SdkPath: Assets/PlayFabSdk
+  SdkPath: Assets/PlayFabSDK
   EdExPath: 
   LocalCloudScriptPath: 
   PanelIsShown: 0
-  curMainMenuIdx: 2
-  curSubMenuIdx: 1
+  curMainMenuIdx: 0
+  curSubMenuIdx: 0

@@ -2,19 +2,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using PlayFab;
 using PlayFab.ClientModels;
-// using Newtonsoft.Json;
+using Newtonsoft.Json;
 using UnityEngine.UI;
 
 
 public class PlayFabControls : MonoBehaviour
 {
-
     [Header("UI")]
     public Text messageText;
     public InputField emailInput;
     public InputField passwordInput;
 
     // Register/Login/ResetPassword (Episode 6)
+
+
     public void RegisterButton() {
         var request = new RegisterPlayFabUserRequest{
             Email = emailInput.text,
@@ -29,18 +30,17 @@ public class PlayFabControls : MonoBehaviour
         messageText.text = "Registered and logged in!";
     }
     public void LoginButton() {
-        var request = new LoginWithEmailAddressRequest
-        {
-            emailInput = emailInput.text,
-            passwordInput = passwordInput.text
+        var request = new LoginWithEmailAddressRequest{
+            Email = emailInput.text,
+            Password = passwordInput.text
         };
         PlayFabClientAPI.LoginWithEmailAddress(request, OnLoginSuccess, OnError);
-    }
+    } 
 
     public void ResetPasswordButton() {
         var request = new SendAccountRecoveryEmailRequest
         {
-            emailInput = emailInput.text,
+            Email = emailInput.text,
             TitleId = "70500"
         };
         PlayFabClientAPI.SendAccountRecoveryEmail(request, OnPasswordReset, OnError);
@@ -73,6 +73,7 @@ public class PlayFabControls : MonoBehaviour
 
     void OnError(PlayFabError error)
     {
+        messageText.text = error.ErrorMessage;
         Debug.Log("Error while loggin in/creating account!");
         Debug.Log(error.GenerateErrorReport());
     }
@@ -88,14 +89,6 @@ public class PlayFabControls : MonoBehaviour
         void GetTitleData()
         void OnCharactersDataRecieved(GetUserDataResult result)
 
-
-
-        //Other
-        void OnError(PlayFabError error)
-        {
-            messageText.text = error.ErrorMessage;
-            Debug.Log(error.GenerateErrorReport());
-        }
     */
 
 

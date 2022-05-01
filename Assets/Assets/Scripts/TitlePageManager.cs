@@ -14,7 +14,7 @@ public class TitlePageManager : MonoBehaviour
     public float transitionTime = 1f;
     */
 
-    public GameObject  displayMorning;
+    public GameObject displayMorning;
     public GameObject displayAfternoon;
     public GameObject displayEvening;
 
@@ -33,55 +33,55 @@ public class TitlePageManager : MonoBehaviour
     void RealTimeDisplay()
     {
         int sysHour = System.DateTime.Now.Hour;
-        if ((sysHour >= 13) && (sysHour < 18))
+        if ((sysHour >= 12) && (sysHour < 17))
         {
 
             AfternoonDisplay();
             
             displayAfternoon.SetActive(true);
-            skyAfternoon.SetActive(true);
+            //skyAfternoon.SetActive(true);
 
             displayMorning.SetActive(false);
-            skyMorning.SetActive(false);
+            //skyMorning.SetActive(false);
 
             displayEvening.SetActive(false);
-            skyEvening.SetActive(false);
+            //skyEvening.SetActive(false);
 
             Debug.Log("Good Afternoon!");
             
         }
 
-        else if ((sysHour >= 1) && (sysHour < 12))
+        else if ((sysHour >= 0) && (sysHour < 11))
         {
 
             MorningDisplay();
             
             displayMorning.SetActive(true);
-            skyMorning.SetActive(true);
+            //skyMorning.SetActive(true);
 
             displayAfternoon.SetActive(false);
-            skyAfternoon.SetActive(false);
+            //skyAfternoon.SetActive(false);
 
             displayEvening.SetActive(false);
-            skyEvening.SetActive(false);
+            //skyEvening.SetActive(false);
             Debug.Log("Good Morning!");
             
 
         }
 
-        else if ((sysHour >=19) && (sysHour < 24))
+        else if ((sysHour >=18) && (sysHour < 23))
         {
 
             EveningDisplay();
             
             displayEvening.SetActive(true);
-            skyEvening.SetActive(true);
+            //skyEvening.SetActive(true);
 
             displayAfternoon.SetActive(false);
-            skyAfternoon.SetActive(false);
+            //skyAfternoon.SetActive(false);
 
             displayMorning.SetActive(false);
-            skyMorning.SetActive(false);
+            //skyMorning.SetActive(false);
             Debug.Log("Evening");
             
 
@@ -110,7 +110,7 @@ public class TitlePageManager : MonoBehaviour
 
     private void AfternoonDisplay() {
         displayAfternoon.SetActive(true);
-        currentSlideupdisplay = 1;
+        currentSlideupdisplay = 0;
 
         if (currentSlideupdisplay == 1)
         {
@@ -122,7 +122,7 @@ public class TitlePageManager : MonoBehaviour
 
     private void EveningDisplay() {
         displayEvening.SetActive(true);
-        currentSlideupdisplay = 2;
+        currentSlideupdisplay = 0;
 
         if (currentSlideupdisplay == 2)
         {
@@ -131,13 +131,6 @@ public class TitlePageManager : MonoBehaviour
 
         }
     }
-
-
-
-
-
-   
-
 
 
     private void disableALLSlide()
