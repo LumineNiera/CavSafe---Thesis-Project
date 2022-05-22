@@ -154,8 +154,10 @@ public class TitlePageManager : MonoBehaviour
     {
         SceneManager.LoadScene("Scene1");
     }
-
-
+    public void Login()
+    {
+        SceneManager.LoadScene("Login");
+    }
     public void loginregisterScreen()
     {
         SceneManager.LoadScene("LoginRegister");
