@@ -4,6 +4,7 @@ using PlayFab;
 using PlayFab.ClientModels;
 using Newtonsoft.Json;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 public class PlayfabManager : MonoBehaviour
@@ -17,6 +18,12 @@ public class PlayfabManager : MonoBehaviour
 
 
     public void RegisterButton() {
+        if (passwordInput.text.Length < 6)
+        {
+            messageText.text = "Password too short!";
+            return;
+        }
+
         var request = new RegisterPlayFabUserRequest{
             Email = emailInput.text,
             Password = passwordInput.text,
@@ -61,7 +68,11 @@ public class PlayfabManager : MonoBehaviour
         var request = new LoginWithCustomIDRequest
         {
             CustomId = SystemInfo.deviceUniqueIdentifier,
-            CreateAccount = true
+            CreateAccount = true,
+            InfoRequestParameters = new GetPlayerCombinedInfoRequestParams
+            {
+                GetPlayerProfile = true
+            }
         };
         PlayFabClientAPI.LoginWithCustomID(request, OnLoginSuccess, OnError);
     }
@@ -69,6 +80,14 @@ public class PlayfabManager : MonoBehaviour
     void OnLoginSuccess(LoginResult result)
     {
         Debug.Log("Successful login/account create!");
+        string name = null;
+        if (result.InfoResultPayload.PlayerProfile != null)
+        name = result.InfoResultPayload.PlayerProfile.DisplayName;
+        return;
+
+        if (name != null)
+            SceneManager.LoadScene("titleScreen");
+        return;
     }
 
     void OnError(PlayFabError error)
@@ -87,7 +106,7 @@ public class PlayfabManager : MonoBehaviour
 
         //Title data (Episode 4)
         void GetTitleData()
-        void OnCharactersDataRecieved(GetUserDataResult result)
+        void OnCharactersDataReceived(GetUserDataResult result)
 
     */
 

@@ -47,7 +47,7 @@ public class TitlePageManager : MonoBehaviour
             displayEvening.SetActive(false);
             //skyEvening.SetActive(false);
 
-            Debug.Log("Good Afternoon!");
+          //  Debug.Log("Good Afternoon!");
             
         }
 
@@ -64,7 +64,7 @@ public class TitlePageManager : MonoBehaviour
 
             displayEvening.SetActive(false);
             //skyEvening.SetActive(false);
-            Debug.Log("Good Morning!");
+            //Debug.Log("Good Morning!");
             
 
         }
@@ -82,7 +82,7 @@ public class TitlePageManager : MonoBehaviour
 
             displayMorning.SetActive(false);
             //skyMorning.SetActive(false);
-            Debug.Log("Evening");
+            //Debug.Log("Good Evening");
             
 
         }
@@ -166,8 +166,10 @@ public class TitlePageManager : MonoBehaviour
     {
         SceneManager.LoadScene("titleScreen");
     }
-    
-
+    public void Map()
+    {
+        SceneManager.LoadScene("Map");
+    }
 
     /*
     public void titleScreenDisplay(){
@@ -176,10 +178,7 @@ public class TitlePageManager : MonoBehaviour
     */
 
 
-    public void Map(){
-        SceneManager.LoadScene("Map");
-    }
-    
+
     /*
     public void CompassScene()
     {
@@ -188,8 +187,8 @@ public class TitlePageManager : MonoBehaviour
     */
 
 
-	// Update is called once per frame
-	void Update () {
+    // Update is called once per frame
+    void Update () {
 
 
         if (Application.platform == RuntimePlatform.Android)
