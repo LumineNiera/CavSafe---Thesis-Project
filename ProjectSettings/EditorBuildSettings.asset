@@ -11,9 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Assets/Scenes/HomeScenes/Login.unity
     guid: 93041839809718245adcdb845de5c55a
-  - enabled: 1
-    path: Assets/Assets/Scenes/HomeScenes/LoginRegister.unity
-    guid: fc991bd4a082abf41915ec5a5c889bb6
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Assets/Scenes/SafetyScenes/SafetyTips.unity
     guid: 6c542375421274ca086c0d509e46f870
