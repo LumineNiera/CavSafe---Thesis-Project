@@ -19,6 +19,8 @@
 
 		[SerializeField]
 		float _spawnScale = 1000f;
+		[SerializeField]
+		float _spawnRotation = 0f;
 
 		[SerializeField]
 		GameObject _markerPrefab;

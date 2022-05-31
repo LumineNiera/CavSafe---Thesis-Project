@@ -6,14 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Assets/Scenes/HomeScenes/titleScreen.unity
-    guid: 27148f151ed164c498396821b4839e0f
-  - enabled: 1
     path: Assets/Assets/Scenes/HomeScenes/Login.unity
     guid: 93041839809718245adcdb845de5c55a
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Assets/Scenes/HomeScenes/titleScreen.unity
+    guid: 27148f151ed164c498396821b4839e0f
   - enabled: 1
     path: Assets/Assets/Scenes/SafetyScenes/SafetyTips.unity
     guid: 6c542375421274ca086c0d509e46f870
@@ -32,12 +29,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Assets/Scenes/HomeScenes/UpdateScene.unity
     guid: 609e0cf72df194c3288ca42d6b9292e2
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Assets/Scenes/UpdateScenes/CompassScene.unity
     guid: 0334cd51c6ab44f40900d74e2c1f3eca
@@ -71,7 +62,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Assets/Scenes/UpdateScenes/WeatherUpdates.unity
     guid: 7c631ec40c9634ec281a135f7d0fd5cb
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   m_configObjects: {}

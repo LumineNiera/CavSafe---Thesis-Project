@@ -2,6 +2,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using PlayFab;
 using PlayFab.ClientModels;
+using PlayFab.DataModels;
+using PlayFab.ProfilesModels;
 using Newtonsoft.Json;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -59,12 +61,9 @@ public class PlayfabManager : MonoBehaviour
 
 
     //Logging in (Episode 2)
-    void Start()
-    {
-        Login();
-    }
 
-    void Login(){
+    void Login()
+    {
         var request = new LoginWithCustomIDRequest
         {
             CustomId = SystemInfo.deviceUniqueIdentifier,
@@ -74,20 +73,12 @@ public class PlayfabManager : MonoBehaviour
                 GetPlayerProfile = true
             }
         };
-        PlayFabClientAPI.LoginWithCustomID(request, OnLoginSuccess, OnError);
-    }
 
-    void OnLoginSuccess(LoginResult result)
+    }
+        void OnLoginSuccess(LoginResult result)
     {
         Debug.Log("Successful login/account create!");
-        string name = null;
-        if (result.InfoResultPayload.PlayerProfile != null)
-        name = result.InfoResultPayload.PlayerProfile.DisplayName;
-        return;
-
-        if (name != null)
-            SceneManager.LoadScene("titleScreen");
-        return;
+        StartGame();
     }
 
     void OnError(PlayFabError error)
@@ -96,6 +87,63 @@ public class PlayfabManager : MonoBehaviour
         Debug.Log("Error while loggin in/creating account!");
         Debug.Log(error.GenerateErrorReport());
     }
+
+    void StartGame()
+    {
+        Debug.Log("CavSafe App Start!");
+        SceneManager.LoadScene("titleScreen");
+  
+    }
+    
+        
+    public void LogoutButton()
+    {
+        Debug.Log("Logged out!");
+        PlayFabClientAPI.ForgetAllCredentials();
+        messageText.text = "Logged Out!";
+    }
+
+    //MAIN BUTTONS
+    public void SafetyTipsScene()
+    {
+        SceneManager.LoadScene("SafetyTips");
+    }
+    public void UpdateScene()
+    {
+        SceneManager.LoadScene("UpdateScene");
+    }
+    public void UserGuideScene()
+    {
+        SceneManager.LoadScene("Scene1");
+    }
+    public void LoginButtonTitleScreen()
+    {
+        SceneManager.LoadScene("Login");
+    }
+    public void loginregisterScreen()
+    {
+        SceneManager.LoadScene("LoginRegister");
+    }
+    public void titleScreen()
+    {
+        SceneManager.LoadScene("titleScreen");
+    }
+    public void Map()
+    {
+        SceneManager.LoadScene("Map");
+    }
+
+    void Update()
+    {
+        if (Application.platform == RuntimePlatform.Android)
+        {
+            if (Input.GetKey(KeyCode.Escape))
+            {
+                Application.Quit();
+            }
+        }
+    }
+
 
     /*
         //Player data (Episode 3)
@@ -107,28 +155,7 @@ public class PlayfabManager : MonoBehaviour
         //Title data (Episode 4)
         void GetTitleData()
         void OnCharactersDataReceived(GetUserDataResult result)
-
     */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     /* [SerializeField] GameObject signUpTab, logInTab, startPanel, HUD;

@@ -256,7 +256,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca03f8b76d6d4455eab2dbfe81d2f888, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Url: https://www.tide-forecast.com/locations/Tanza/tides/latest
+  Url: https://www.tide-forecast.com/locations/General-Trias/tides/latest
   status: {fileID: 0}
 --- !u!114 &218501370
 MonoBehaviour:
