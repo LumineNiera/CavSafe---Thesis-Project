@@ -17,7 +17,7 @@ public class PlayfabManager : MonoBehaviour
     public InputField passwordInput;
 
     // Register/Login/ResetPassword (Episode 6)
-
+    public static string strEmail;
 
     public void RegisterButton() {
         if (passwordInput.text.Length < 6)
@@ -43,6 +43,7 @@ public class PlayfabManager : MonoBehaviour
             Email = emailInput.text,
             Password = passwordInput.text
         };
+        Debug.Log("Current user is " + emailInput.text);
         PlayFabClientAPI.LoginWithEmailAddress(request, OnLoginSuccess, OnError);
     } 
 
@@ -75,10 +76,23 @@ public class PlayfabManager : MonoBehaviour
         };
 
     }
+
         void OnLoginSuccess(LoginResult result)
     {
+        strEmail = emailInput.text;
         Debug.Log("Successful login/account create!");
-        StartGame();
+        //StartGame();
+
+        if (emailInput.text == "admin@cavsafe.ph")
+        {
+            StartAdmin();
+        }
+        else
+        {
+            StartNormal();
+        }
+
+
     }
 
     void OnError(PlayFabError error)
@@ -88,14 +102,19 @@ public class PlayfabManager : MonoBehaviour
         Debug.Log(error.GenerateErrorReport());
     }
 
-    void StartGame()
+    void StartAdmin()
+    {
+        //Debug.Log("Current user is " + emailInput.text);
+        Debug.Log("CavSafe App Start!");
+        SceneManager.LoadScene("adminScreen");
+    }
+
+    void StartNormal()
     {
         Debug.Log("CavSafe App Start!");
         SceneManager.LoadScene("titleScreen");
-  
     }
-    
-        
+
     public void LogoutButton()
     {
         Debug.Log("Logged out!");

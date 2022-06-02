@@ -5,8 +5,12 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
+
 public class TitlePageManager : MonoBehaviour 
 {
+    [Header("UI")]
+    public Text notifText ;
+
     [SerializeField] private List<GameObject> SkySlideUp = new List<GameObject>();
     private int currentSlideupdisplay;
 
@@ -22,16 +26,19 @@ public class TitlePageManager : MonoBehaviour
     public GameObject skyAfternoon;
     public GameObject skyEvening;
 
-  
+
+   
 
 	// Use this for initialization
 	void Start (){
 
-       
+        
      }
 
     void RealTimeDisplay()
     {
+        notifText.text = PlayfabManager.strEmail;
+
         int sysHour = System.DateTime.Now.Hour;
         if ((sysHour >= 12) && (sysHour < 17))
         {

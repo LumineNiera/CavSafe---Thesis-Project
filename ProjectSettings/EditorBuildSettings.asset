@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Assets/Scenes/HomeScenes/Login.unity
     guid: 93041839809718245adcdb845de5c55a
   - enabled: 1
+    path: Assets/Assets/Scenes/HomeScenes/adminScreen.unity
+    guid: 443e3c13f7d9a744886ff7271cfd3aa4
+  - enabled: 1
     path: Assets/Assets/Scenes/HomeScenes/titleScreen.unity
     guid: 27148f151ed164c498396821b4839e0f
   - enabled: 1
