@@ -9,11 +9,20 @@ EditorBuildSettings:
     path: Assets/Assets/Scenes/HomeScenes/Login.unity
     guid: 93041839809718245adcdb845de5c55a
   - enabled: 1
+    path: Assets/Assets/Scenes/HomeScenes/GuestScreen.unity
+    guid: df62b2bd38a58154fb8ea0d100c6a12d
+  - enabled: 1
     path: Assets/Assets/Scenes/HomeScenes/adminScreen.unity
     guid: 443e3c13f7d9a744886ff7271cfd3aa4
   - enabled: 1
+    path: Assets/Assets/Scenes/HomeScenes/AdminYellow.unity
+    guid: b789fed526f2e2a49a71499ae1a19e32
+  - enabled: 1
     path: Assets/Assets/Scenes/HomeScenes/titleScreen.unity
     guid: 27148f151ed164c498396821b4839e0f
+  - enabled: 1
+    path: Assets/Assets/Scenes/HomeScenes/NormalGreen.unity
+    guid: 44f5133cb00aa0b46a4c819cb655fcc1
   - enabled: 1
     path: Assets/Assets/Scenes/SafetyScenes/SafetyTips.unity
     guid: 6c542375421274ca086c0d509e46f870
@@ -29,11 +38,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Assets/Scenes/SafetyScenes/FloodScene.unity
     guid: 8d3ccfb9b73b347308c1c18759a3293d
-  - enabled: 1
-    path: Assets/Assets/Scenes/HomeScenes/UpdateScene.unity
+  - enabled: 0
+    path: 
     guid: 609e0cf72df194c3288ca42d6b9292e2
-  - enabled: 1
-    path: Assets/Assets/Scenes/UpdateScenes/CompassScene.unity
+  - enabled: 0
+    path: 
     guid: 0334cd51c6ab44f40900d74e2c1f3eca
   - enabled: 1
     path: Assets/Assets/Scenes/UpdateScenes/Alarm.unity
@@ -48,7 +57,7 @@ EditorBuildSettings:
     path: Assets/Assets/Scenes/UserGuideScenes/Scene1.unity
     guid: c14b808723acb684a94d269328ca7f2f
   - enabled: 1
-    path: Assets/Assets/Scenes/UserGuideScenes/Scene2.unity
+    path: Assets/Assets/Scenes/UserGuideScenes/yellow.unity
     guid: b7aadf6db0f92ff41ab7b7c0c96f82ee
   - enabled: 1
     path: Assets/Assets/Scenes/UserGuideScenes/Scene3.unity
@@ -59,7 +68,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Assets/Scenes/UpdateScenes/NewsUpdates.unity
     guid: e1274fc12d3684f1d90523ba76924059
-  - enabled: 1
+  - enabled: 0
     path: Assets/Assets/Scenes/UpdateScenes/SearchNavigation.unity
     guid: 4e1d7c62028a742e69cb8da6c14367e9
   - enabled: 1

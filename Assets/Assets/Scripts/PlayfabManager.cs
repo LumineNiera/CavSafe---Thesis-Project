@@ -3,11 +3,12 @@ using System.Text.RegularExpressions;
 using UnityEngine;
 using PlayFab;
 using PlayFab.ClientModels;
-using PlayFab.DataModels;
-using PlayFab.ProfilesModels;
-using Newtonsoft.Json;
+//using PlayFab.DataModels;
+//using PlayFab.ProfilesModels;
+//using Newtonsoft.Json;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+
 
 
 public class PlayfabManager : MonoBehaviour
@@ -19,6 +20,15 @@ public class PlayfabManager : MonoBehaviour
 
     // Register/Login/ResetPassword (Episode 6)
     public static string strEmail;
+    public static string strRole;
+    public static int intTheme;
+
+
+    void Start()
+    {
+        Login();
+    }
+
 
 
 
@@ -93,13 +103,7 @@ public class PlayfabManager : MonoBehaviour
             return;
         }
 
-        //if (ValidateEmail(emailInput.text) == false)
-        //{
-        //    messageText.text = "Invalid email address!";
-        //    return;
-        //}
-
-
+       
         var request = new RegisterPlayFabUserRequest
         {
             Email = emailInput.text,
@@ -109,10 +113,73 @@ public class PlayfabManager : MonoBehaviour
         PlayFabClientAPI.RegisterPlayFabUser(request, OnRegisterSuccess, OnError);
     }
 
-    void OnRegisterSuccess(RegisterPlayFabUserResult result)
+    public void SaveRole()
     {
-        messageText.text = "Registered and logged in!";
+        var request = new UpdateUserDataRequest
+        {
+            Data = new Dictionary<string, string> {
+                { "Role", "Normal" }
+            }
+        };
+        PlayFabClientAPI.UpdateUserData(request, OnDataSend, OnError);
     }
+
+    public void GetRole()
+    {
+        PlayFabClientAPI.GetUserData(new GetUserDataRequest(), OnDataReceived, OnError);
+    }
+
+    public void GetTheme()
+    {
+        PlayFabClientAPI.GetTitleData(new GetTitleDataRequest(), OnTitleDataReceived, OnError);
+    }
+
+    void OnTitleDataReceived(GetTitleDataResult result)
+    {
+        if (result.Data == null || result.Data.ContainsKey("Theme") == false)
+        {
+            Debug.Log("No message");
+            return;
+        }
+            
+        //intTheme = int.Parse(result.Data["Theme"]);
+        PlayerPrefs.SetString("Theme", result.Data["Theme"]);
+        PlayerPrefs.Save();
+
+    }
+
+    void OnDataReceived(GetUserDataResult result)
+    {
+        if (result.Data != null && result.Data.ContainsKey("Role"))
+        {
+            PlayerPrefs.SetString("Role", result.Data["Role"].Value.ToString());
+            PlayerPrefs.Save();
+        }
+        else
+        {
+            strRole = "Normal";       
+        }
+
+       
+
+    }
+
+
+
+    void OnRegisterSuccess(RegisterPlayFabUserResult result)
+    {     
+        messageText.text = "Registered and logged in!";
+        SaveRole();
+    }
+
+    void OnDataSend(UpdateUserDataResult result)
+    {
+        Debug.Log("User Data Added");
+        //Debug.Log("Registered and logged in!");
+    }
+
+
+
     public void LoginButton()
     {
         var request = new LoginWithEmailAddressRequest
@@ -158,25 +225,57 @@ public class PlayfabManager : MonoBehaviour
 
     void OnLoginSuccess(LoginResult result)
     {
-        strEmail = emailInput.text;
-        Debug.Log("Successful login/account create!");
-        //StartGame();
-
-        if (ValidateRole(emailInput.text)=="admin")
+        GetTheme();
+        GetRole();
+                
+        if (PlayerPrefs.GetString("Role") == "Admin")
         {
-            StartAdmin();
+            if (PlayerPrefs.GetString("Theme") == "Yellow")
+            {
+                SceneManager.LoadScene("AdminYellow");
+            }
+            else if (PlayerPrefs.GetString("Theme") == "Green")
+            {
+                SceneManager.LoadScene("AdminGreen");
+            }
+            else if (PlayerPrefs.GetString("Theme") == "Red")
+            {
+                SceneManager.LoadScene("AdminRed");
+            }
+            else
+            {
+                SceneManager.LoadScene("adminScreen");
+            }
+              
         }
-        else 
+        else if (PlayerPrefs.GetString("Role") == "Normal")
         {
-            StartNormal();
-        }                
-
+            if (PlayerPrefs.GetString("Theme") == "Yellow")
+            {
+                SceneManager.LoadScene("NormalYellow");
+            }
+            else if (PlayerPrefs.GetString("Theme") == "Green")
+            {
+                SceneManager.LoadScene("NormalGreen");
+            }
+            else if (PlayerPrefs.GetString("Theme") == "Red")
+            {
+                SceneManager.LoadScene("NormalRed");
+            }
+            else
+            {
+                SceneManager.LoadScene("adminScreen");
+            }
+        }
+        else
+        {           
+            SceneManager.LoadScene("GuestScreen");            
+        }
     }
 
     void OnError(PlayFabError error)
     {
         messageText.text = error.ErrorMessage;
-        Debug.Log("Error while loggin in/creating account!");
         Debug.Log(error.GenerateErrorReport());
     }
 
@@ -193,11 +292,19 @@ public class PlayfabManager : MonoBehaviour
         SceneManager.LoadScene("titleScreen");
     }
 
+    void StartGuest()
+    {
+        Debug.Log("CavSafe App Start!");
+        SceneManager.LoadScene("titleScreen");
+    }
+
     public void LogoutButton()
     {
         Debug.Log("Logged out!");
         PlayFabClientAPI.ForgetAllCredentials();
         messageText.text = "Logged Out!";
+
+        SceneManager.LoadScene("Login");
     }
 
     //MAIN BUTTONS
@@ -230,16 +337,16 @@ public class PlayfabManager : MonoBehaviour
         SceneManager.LoadScene("Map");
     }
 
-    void Update()
-    {
-        if (Application.platform == RuntimePlatform.Android)
-        {
-            if (Input.GetKey(KeyCode.Escape))
-            {
-                Application.Quit();
-            }
-        }
-    }
+    //void Update()
+    //{
+    //    if (Application.platform == RuntimePlatform.Android)
+    //    {
+    //        if (Input.GetKey(KeyCode.Escape))
+    //        {
+    //            Application.Quit();
+    //        }
+    //    }
+    //}
 
 
     /*

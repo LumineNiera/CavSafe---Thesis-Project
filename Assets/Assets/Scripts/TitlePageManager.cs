@@ -39,114 +39,114 @@ public class TitlePageManager : MonoBehaviour
     {
         notifText.text = PlayfabManager.strEmail;
 
-        int sysHour = System.DateTime.Now.Hour;
-        if ((sysHour >= 12) && (sysHour < 17))
-        {
+        //int sysHour = System.DateTime.Now.Hour;
+        //if ((sysHour >= 12) && (sysHour < 17))
+        //{
 
-            AfternoonDisplay();
+        //    AfternoonDisplay();
             
-            displayAfternoon.SetActive(true);
-            //skyAfternoon.SetActive(true);
+        //    displayAfternoon.SetActive(true);
+        //    //skyAfternoon.SetActive(true);
 
-            displayMorning.SetActive(false);
-            //skyMorning.SetActive(false);
+        //    displayMorning.SetActive(false);
+        //    //skyMorning.SetActive(false);
 
-            displayEvening.SetActive(false);
-            //skyEvening.SetActive(false);
+        //    displayEvening.SetActive(false);
+        //    //skyEvening.SetActive(false);
 
-          //  Debug.Log("Good Afternoon!");
+        //  //  Debug.Log("Good Afternoon!");
             
-        }
+        //}
 
-        else if ((sysHour >= 0) && (sysHour < 11))
-        {
+        //else if ((sysHour >= 0) && (sysHour < 11))
+        //{
 
-            MorningDisplay();
+        //    MorningDisplay();
             
-            displayMorning.SetActive(true);
-            //skyMorning.SetActive(true);
+        //    displayMorning.SetActive(true);
+        //    //skyMorning.SetActive(true);
 
-            displayAfternoon.SetActive(false);
-            //skyAfternoon.SetActive(false);
+        //    displayAfternoon.SetActive(false);
+        //    //skyAfternoon.SetActive(false);
 
-            displayEvening.SetActive(false);
-            //skyEvening.SetActive(false);
-            //Debug.Log("Good Morning!");
-            
-
-        }
-
-        else if ((sysHour >=18) && (sysHour < 23))
-        {
-
-            EveningDisplay();
-            
-            displayEvening.SetActive(true);
-            //skyEvening.SetActive(true);
-
-            displayAfternoon.SetActive(false);
-            //skyAfternoon.SetActive(false);
-
-            displayMorning.SetActive(false);
-            //skyMorning.SetActive(false);
-            //Debug.Log("Good Evening");
+        //    displayEvening.SetActive(false);
+        //    //skyEvening.SetActive(false);
+        //    //Debug.Log("Good Morning!");
             
 
-        }
+        //}
 
-        else
+        //else if ((sysHour >=18) && (sysHour < 23))
+        //{
+
+        //    EveningDisplay();
             
-            displayEvening.SetActive(true);
+        //    displayEvening.SetActive(true);
+        //    //skyEvening.SetActive(true);
+
+        //    displayAfternoon.SetActive(false);
+        //    //skyAfternoon.SetActive(false);
+
+        //    displayMorning.SetActive(false);
+        //    //skyMorning.SetActive(false);
+        //    //Debug.Log("Good Evening");
+            
+
+        //}
+
+        //else
+            
+        //    displayEvening.SetActive(true);
             
     }
 
 
-    private void MorningDisplay(){
-        displayMorning.SetActive(true);
-        currentSlideupdisplay = 0;
+    //private void MorningDisplay(){
+    //    displayMorning.SetActive(true);
+    //    currentSlideupdisplay = 0;
 
-        if (currentSlideupdisplay == 0)
-        {
-            disableALLSlide();
-            SkySlideUp[currentSlideupdisplay].SetActive(true);
+    //    if (currentSlideupdisplay == 0)
+    //    {
+    //        disableALLSlide();
+    //        SkySlideUp[currentSlideupdisplay].SetActive(true);
 
-        }
+    //    }
            
-    }
+    //}
 
 
-    private void AfternoonDisplay() {
-        displayAfternoon.SetActive(true);
-        currentSlideupdisplay = 0;
+    //private void AfternoonDisplay() {
+    //    displayAfternoon.SetActive(true);
+    //    currentSlideupdisplay = 0;
 
-        if (currentSlideupdisplay == 1)
-        {
-            disableALLSlide();
-            SkySlideUp[currentSlideupdisplay].SetActive(true);
+    //    if (currentSlideupdisplay == 1)
+    //    {
+    //        disableALLSlide();
+    //        SkySlideUp[currentSlideupdisplay].SetActive(true);
 
-        }
-    } 
+    //    }
+    //} 
 
-    private void EveningDisplay() {
-        displayEvening.SetActive(true);
-        currentSlideupdisplay = 0;
+    //private void EveningDisplay() {
+    //    displayEvening.SetActive(true);
+    //    currentSlideupdisplay = 0;
 
-        if (currentSlideupdisplay == 2)
-        {
-            disableALLSlide();
-            SkySlideUp[currentSlideupdisplay].SetActive(true);
+    //    if (currentSlideupdisplay == 2)
+    //    {
+    //        disableALLSlide();
+    //        SkySlideUp[currentSlideupdisplay].SetActive(true);
 
-        }
-    }
+    //    }
+    //}
 
 
-    private void disableALLSlide()
-    {
-        for (int i = 0; i < SkySlideUp.Count; i++)
-        {
-            SkySlideUp[i].SetActive(false);
-        }
-    }
+    //private void disableALLSlide()
+    //{
+    //    for (int i = 0; i < SkySlideUp.Count; i++)
+    //    {
+    //        SkySlideUp[i].SetActive(false);
+    //    }
+    //}
 	
 
 
@@ -155,7 +155,7 @@ public class TitlePageManager : MonoBehaviour
         SceneManager.LoadScene("SafetyTips"); 
     }
     public void  UpdateScene(){
-        SceneManager.LoadScene("UpdateScene"); 
+        SceneManager.LoadScene("UpdateScene");
     }
     public void UserGuideScene()
     {
@@ -172,6 +172,10 @@ public class TitlePageManager : MonoBehaviour
     public void titleScreen()
     {
         SceneManager.LoadScene("titleScreen");
+    }
+    public void GuestScreen()
+    {
+        SceneManager.LoadScene("GuestScreen");
     }
     public void Map()
     {

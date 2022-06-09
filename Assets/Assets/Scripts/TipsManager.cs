@@ -18,7 +18,7 @@ public class TipsManager : MonoBehaviour
 
     }
 
-    public void DuringTips()
+    public void BeforeTips()
     {
         currentTipDisplay = 0;
         if (currentTipDisplay == 0)
@@ -28,7 +28,7 @@ public class TipsManager : MonoBehaviour
         }
     }
 
-    public void BeforeTips()
+    public void DuringTips()
     {
         currentTipDisplay = 1;
         if (currentTipDisplay == 1)
@@ -37,6 +37,8 @@ public class TipsManager : MonoBehaviour
             Tips[currentTipDisplay].SetActive(true);
         }
     }
+
+
 
     public void AfterTips()
     {

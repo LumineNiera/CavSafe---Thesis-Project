@@ -18,7 +18,7 @@
 		Vector2d[] _locations;
 
 		[SerializeField]
-		float _spawnScale = 1000f;
+		float _spawnScale = 0f;
 		[SerializeField]
 		float _spawnRotation = 0f;
 
