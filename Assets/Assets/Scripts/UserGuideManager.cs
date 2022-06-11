@@ -20,19 +20,58 @@ public class UserGuideManager : MonoBehaviour
     }
     public void Scene1()
     {
-        SceneManager.LoadScene("Scene1");
+        if (PlayerPrefs.GetString("Theme") == "Yellow")
+        {
+            SceneManager.LoadScene("yellowhelp");
+        }
+        else if (PlayerPrefs.GetString("Theme") == "Green")
+        {
+            SceneManager.LoadScene("greenhelp");
+        }
+        else if (PlayerPrefs.GetString("Theme") == "Red")
+        {
+            SceneManager.LoadScene("redhelp");
+        }
+        else if (PlayerPrefs.GetString("Theme") == "Black")
+        {
+            SceneManager.LoadScene("blackhelp");
+        }
+        else if (PlayerPrefs.GetString("Theme") == "Violet")
+        {
+            SceneManager.LoadScene("violethelp");
+        }
+        else
+        {
+            SceneManager.LoadScene("bluehelp");
+        }
     }
-    public void Scene2()
-    {
-        SceneManager.LoadScene("Scene2");
-    }
-    public void Scene3()
-    {
-        SceneManager.LoadScene("Scene3");
-    }
+
     public void TitleScreen()
     {
-        SceneManager.LoadScene("titleScreen");
+        if (PlayerPrefs.GetString("Theme") == "Yellow")
+        {
+            SceneManager.LoadScene("NormalYellow");
+        }
+        else if (PlayerPrefs.GetString("Theme") == "Green")
+        {
+            SceneManager.LoadScene("NormalGreen");
+        }
+        else if (PlayerPrefs.GetString("Theme") == "Red")
+        {
+            SceneManager.LoadScene("NormalRed");
+        }
+        else if (PlayerPrefs.GetString("Theme") == "Black")
+        {
+            SceneManager.LoadScene("NormalBlack");
+        }
+        else if (PlayerPrefs.GetString("Theme") == "Violet")
+        {
+            SceneManager.LoadScene("NormalViolet");
+        }
+        else
+        {
+            SceneManager.LoadScene("titleScreen");
+        }
     }
 
     private void AndriodBack()
@@ -41,9 +80,31 @@ public class UserGuideManager : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Escape))
             {
-                SceneManager.LoadScene("titleScreen");
+                if (PlayerPrefs.GetString("Theme") == "Yellow")
+                {
+                    SceneManager.LoadScene("NormalYellow");
+                }
+                else if (PlayerPrefs.GetString("Theme") == "Green")
+                {
+                    SceneManager.LoadScene("NormalGreen");
+                }
+                else if (PlayerPrefs.GetString("Theme") == "Red")
+                {
+                    SceneManager.LoadScene("NormalRed");
+                }
+                else if (PlayerPrefs.GetString("Theme") == "Black")
+                {
+                    SceneManager.LoadScene("NormalBlack");
+                }
+                else if (PlayerPrefs.GetString("Theme") == "Violet")
+                {
+                    SceneManager.LoadScene("NormalViolet");
+                }
+                else
+                {
+                    SceneManager.LoadScene("titleScreen");
+                }
             }
-
         }
 
 

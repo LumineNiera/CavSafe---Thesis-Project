@@ -26,7 +26,7 @@ public class AlarmManager : MonoBehaviour {
         {
             if (Input.GetKeyDown(KeyCode.Escape))
             {
-                SceneManager.LoadScene("UpdateScene");
+                SceneManager.LoadScene("titleScreen");
             }
         }
 	}
@@ -56,8 +56,31 @@ public class AlarmManager : MonoBehaviour {
      
     }
 
-    public void back()
+    public void TitleScreen()
     {
-        SceneManager.LoadScene("UpdateScene");
+        if (PlayerPrefs.GetString("Theme") == "Yellow")
+        {
+            SceneManager.LoadScene("NormalYellow");
+        }
+        else if (PlayerPrefs.GetString("Theme") == "Green")
+        {
+            SceneManager.LoadScene("NormalGreen");
+        }
+        else if (PlayerPrefs.GetString("Theme") == "Red")
+        {
+            SceneManager.LoadScene("NormalRed");
+        }
+        else if (PlayerPrefs.GetString("Theme") == "Black")
+        {
+            SceneManager.LoadScene("NormalBlack");
+        }
+        else if (PlayerPrefs.GetString("Theme") == "Violet")
+        {
+            SceneManager.LoadScene("NormalViolet");
+        }
+        else
+        {
+            SceneManager.LoadScene("titleScreen");
+        }
     }
 }

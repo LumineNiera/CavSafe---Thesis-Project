@@ -9,69 +9,240 @@ EditorBuildSettings:
     path: Assets/Assets/Scenes/HomeScenes/Login.unity
     guid: 93041839809718245adcdb845de5c55a
   - enabled: 1
+    path: Assets/Assets/Scenes/HomeScenes/LoginBlack.unity
+    guid: ce6e2ea35bfde7e43a94fd05d9337930
+  - enabled: 1
+    path: Assets/Assets/Scenes/HomeScenes/LoginGreen.unity
+    guid: a43122917f945444cac89db200690b5b
+  - enabled: 1
+    path: Assets/Assets/Scenes/HomeScenes/LoginRed.unity
+    guid: 4561cdb0ceba24641b280f6bf8ff5add
+  - enabled: 1
+    path: Assets/Assets/Scenes/HomeScenes/LoginViolet.unity
+    guid: bf970a19c73b5434f9b96e53f202d6bf
+  - enabled: 1
+    path: Assets/Assets/Scenes/HomeScenes/LoginYellow.unity
+    guid: 6ee3a13b2f7249c4aadc3ec171502f91
+  - enabled: 1
     path: Assets/Assets/Scenes/HomeScenes/GuestScreen.unity
     guid: df62b2bd38a58154fb8ea0d100c6a12d
+  - enabled: 1
+    path: Assets/Assets/Scenes/HomeScenes/AdminBlack.unity
+    guid: 1b3e5ec14ac416243b0ce4f56cfe66fc
+  - enabled: 1
+    path: Assets/Assets/Scenes/HomeScenes/AdminGreen.unity
+    guid: bc361b16d719e694f827c98872316a0a
+  - enabled: 1
+    path: Assets/Assets/Scenes/HomeScenes/AdminRed.unity
+    guid: f1ff6bb0edd2186479ae8b5569b3f2a4
   - enabled: 1
     path: Assets/Assets/Scenes/HomeScenes/adminScreen.unity
     guid: 443e3c13f7d9a744886ff7271cfd3aa4
   - enabled: 1
+    path: Assets/Assets/Scenes/HomeScenes/AdminViolet.unity
+    guid: 6d1c900998c6d4e4293f55dac7120fdd
+  - enabled: 1
     path: Assets/Assets/Scenes/HomeScenes/AdminYellow.unity
     guid: b789fed526f2e2a49a71499ae1a19e32
   - enabled: 1
-    path: Assets/Assets/Scenes/HomeScenes/titleScreen.unity
-    guid: 27148f151ed164c498396821b4839e0f
+    path: Assets/Assets/Scenes/HomeScenes/NormalBlack.unity
+    guid: fb43200130904094b90ef6597356db53
   - enabled: 1
     path: Assets/Assets/Scenes/HomeScenes/NormalGreen.unity
     guid: 44f5133cb00aa0b46a4c819cb655fcc1
   - enabled: 1
-    path: Assets/Assets/Scenes/SafetyScenes/SafetyTips.unity
-    guid: 6c542375421274ca086c0d509e46f870
+    path: Assets/Assets/Scenes/HomeScenes/NormalRed.unity
+    guid: 5170d96f60b814c458cc25ac72efcc3c
+  - enabled: 1
+    path: Assets/Assets/Scenes/HomeScenes/NormalViolet.unity
+    guid: a665787ef42b5f149bd1a8f9f12e64e4
+  - enabled: 1
+    path: Assets/Assets/Scenes/HomeScenes/NormalYellow.unity
+    guid: 33e01056bbd9b0244902158f894f2ef3
+  - enabled: 1
+    path: Assets/Assets/Scenes/HomeScenes/titleScreen.unity
+    guid: 27148f151ed164c498396821b4839e0f
   - enabled: 1
     path: Assets/Assets/Scenes/SafetyScenes/CovidScene.unity
     guid: 9346dfa9e1b2649dda4794580aec581d
   - enabled: 1
+    path: Assets/Assets/Scenes/SafetyScenes/CovidSceneBlack.unity
+    guid: ec262c93d603d07478bf96a3fbb3c192
+  - enabled: 1
+    path: Assets/Assets/Scenes/SafetyScenes/CovidSceneGreen.unity
+    guid: 292fae376e705f24eb0c71293c7062bd
+  - enabled: 1
+    path: Assets/Assets/Scenes/SafetyScenes/CovidSceneRed.unity
+    guid: a527850eb4273d44d85795c4de2af567
+  - enabled: 1
+    path: Assets/Assets/Scenes/SafetyScenes/CovidSceneViolet.unity
+    guid: d130e1f8b1303674f8a6a3517907ce79
+  - enabled: 1
+    path: Assets/Assets/Scenes/SafetyScenes/CovidSceneYellow.unity
+    guid: 5291ab447cf2343469d9e758854478b4
+  - enabled: 1
     path: Assets/Assets/Scenes/SafetyScenes/EQScene.unity
+    guid: 1665a125fb33422439571377e7f21314
+  - enabled: 1
+    path: Assets/Assets/Scenes/SafetyScenes/EQSceneBlack.unity
     guid: f1e4428a630614730bcdbcee3d03214d
+  - enabled: 1
+    path: Assets/Assets/Scenes/SafetyScenes/EQSceneGreen.unity
+    guid: bac6e25125c73ee4d8daf54e9b4be2a2
+  - enabled: 1
+    path: Assets/Assets/Scenes/SafetyScenes/EQSceneRed.unity
+    guid: 6644a02ed0711cc4499f8b90dcac5c65
+  - enabled: 1
+    path: Assets/Assets/Scenes/SafetyScenes/EQSceneViolet.unity
+    guid: 3a0059093a122a343a5a8fa02c9ea6cb
+  - enabled: 1
+    path: Assets/Assets/Scenes/SafetyScenes/EQSceneYellow.unity
+    guid: 1082502489f19774e935d9b6b7e217e2
   - enabled: 1
     path: Assets/Assets/Scenes/SafetyScenes/FireScene.unity
     guid: 057d81be441d442cc975688e9a24b021
   - enabled: 1
+    path: Assets/Assets/Scenes/SafetyScenes/FireSceneBlack.unity
+    guid: 12bd4d22890bdca4b8f2c5e8970208d8
+  - enabled: 1
+    path: Assets/Assets/Scenes/SafetyScenes/FireSceneGreen.unity
+    guid: 3e3cac8dafab3664dbbe9736c25adf7e
+  - enabled: 1
+    path: Assets/Assets/Scenes/SafetyScenes/FireSceneRed.unity
+    guid: 37fb352aa6f24ae43b315ca22d113d83
+  - enabled: 1
+    path: Assets/Assets/Scenes/SafetyScenes/FireSceneViolet.unity
+    guid: 12ec94daa3a91554db92e402f1009acf
+  - enabled: 1
+    path: Assets/Assets/Scenes/SafetyScenes/FireSceneYellow.unity
+    guid: f8dee61e21746ee4e96642b6e13bc47e
+  - enabled: 1
     path: Assets/Assets/Scenes/SafetyScenes/FloodScene.unity
     guid: 8d3ccfb9b73b347308c1c18759a3293d
-  - enabled: 0
-    path: 
-    guid: 609e0cf72df194c3288ca42d6b9292e2
-  - enabled: 0
-    path: 
-    guid: 0334cd51c6ab44f40900d74e2c1f3eca
   - enabled: 1
-    path: Assets/Assets/Scenes/UpdateScenes/Alarm.unity
-    guid: a58281c20777b4caf9e26dd3bbfe8bd0
+    path: Assets/Assets/Scenes/SafetyScenes/FloodSceneBlack.unity
+    guid: 8355bc9c4d89929438c355ba454e7269
+  - enabled: 1
+    path: Assets/Assets/Scenes/SafetyScenes/FloodSceneGreen.unity
+    guid: e165e906baf2453468dbc5cb6a806a06
+  - enabled: 1
+    path: Assets/Assets/Scenes/SafetyScenes/FloodSceneRed.unity
+    guid: 05f0164fb09b5844ba2ea3a6fef9ee44
+  - enabled: 1
+    path: Assets/Assets/Scenes/SafetyScenes/FloodSceneViolet.unity
+    guid: eb053c84b81a20d439aeb29b81ebc968
+  - enabled: 1
+    path: Assets/Assets/Scenes/SafetyScenes/FloodSceneYellow.unity
+    guid: 5888c8afd85075f49a2aac06eb268aac
+  - enabled: 1
+    path: Assets/Assets/Scenes/SafetyScenes/SafetyTips.unity
+    guid: 6c542375421274ca086c0d509e46f870
+  - enabled: 1
+    path: Assets/Assets/Scenes/SafetyScenes/SafetyTipsBlack.unity
+    guid: 52d5d8cf3f042754eae1d36a5a71187d
+  - enabled: 1
+    path: Assets/Assets/Scenes/SafetyScenes/SafetyTipsGreen.unity
+    guid: 88c0540c65364b54cb7981d5b7db1c9f
+  - enabled: 1
+    path: Assets/Assets/Scenes/SafetyScenes/SafetyTipsRed.unity
+    guid: 81b70eb3df7a33e4788213401dd19404
+  - enabled: 1
+    path: Assets/Assets/Scenes/SafetyScenes/SafetyTipsViolet.unity
+    guid: 5dd1b37516635f445b281db94a4e53d6
+  - enabled: 1
+    path: Assets/Assets/Scenes/SafetyScenes/SafetyTipsYellow.unity
+    guid: 4a2246d6badfcb844a462f2ef629c390
   - enabled: 1
     path: Assets/Assets/Scenes/UpdateScenes/CovidUpdates.unity
     guid: 40c13c870f650438c872b656383e1f89
   - enabled: 1
+    path: Assets/Assets/Scenes/UpdateScenes/CovidUpdatesBlack.unity
+    guid: 238a543d54255304fb61bf62e32c4972
+  - enabled: 1
+    path: Assets/Assets/Scenes/UpdateScenes/CovidUpdatesGreen.unity
+    guid: ae37192070524f84186c1163ffa8899a
+  - enabled: 1
+    path: Assets/Assets/Scenes/UpdateScenes/CovidUpdatesRed.unity
+    guid: cff68eeec3fc4e2419a284471f0c4cdd
+  - enabled: 1
+    path: Assets/Assets/Scenes/UpdateScenes/CovidUpdatesViolet.unity
+    guid: df800ebf52c9f1e4b8176732442a8bf4
+  - enabled: 1
+    path: Assets/Assets/Scenes/UpdateScenes/CovidUpdatesYellow.unity
+    guid: 4bce2821def6382498ecfa89e2f9012b
+  - enabled: 1
     path: Assets/Assets/Scenes/UpdateScenes/EmergencyHotline.unity
     guid: fed67e628b00640c6b7e4019abf6843e
   - enabled: 1
-    path: Assets/Assets/Scenes/UserGuideScenes/Scene1.unity
-    guid: c14b808723acb684a94d269328ca7f2f
+    path: Assets/Assets/Scenes/UpdateScenes/EmergencyHotlineBlack.unity
+    guid: e03d9d61ca0bc674a8ff0976beea9978
   - enabled: 1
-    path: Assets/Assets/Scenes/UserGuideScenes/yellow.unity
-    guid: b7aadf6db0f92ff41ab7b7c0c96f82ee
+    path: Assets/Assets/Scenes/UpdateScenes/EmergencyHotlineGreen.unity
+    guid: ac244b4c541ea764faed7e2d9a6ee0e9
   - enabled: 1
-    path: Assets/Assets/Scenes/UserGuideScenes/Scene3.unity
-    guid: c7128414769658248a3cf369c38f1f8f
+    path: Assets/Assets/Scenes/UpdateScenes/EmergencyHotlineRed.unity
+    guid: 0be5ead0b707af64aa900751d77de50f
+  - enabled: 1
+    path: Assets/Assets/Scenes/UpdateScenes/EmergencyHotlineViolet.unity
+    guid: 11269e7d04ca3254b84f1bc0ad3c33c6
+  - enabled: 1
+    path: Assets/Assets/Scenes/UpdateScenes/EmergencyHotlineYellow.unity
+    guid: 75fb573cbb897d54ca35c8a18f1afa89
   - enabled: 1
     path: Assets/Assets/Scenes/UpdateScenes/Map.unity
     guid: 42f6aa7ce7a604f16ade319663f46ceb
   - enabled: 1
     path: Assets/Assets/Scenes/UpdateScenes/NewsUpdates.unity
     guid: e1274fc12d3684f1d90523ba76924059
-  - enabled: 0
-    path: Assets/Assets/Scenes/UpdateScenes/SearchNavigation.unity
-    guid: 4e1d7c62028a742e69cb8da6c14367e9
+  - enabled: 1
+    path: Assets/Assets/Scenes/UpdateScenes/NewsUpdatesBlack.unity
+    guid: f439afe3bde711943a624b9cf034a7fc
+  - enabled: 1
+    path: Assets/Assets/Scenes/UpdateScenes/NewsUpdatesGreen.unity
+    guid: 8979a7baa4ffa744f8778f4e64255e9c
+  - enabled: 1
+    path: Assets/Assets/Scenes/UpdateScenes/NewsUpdatesRed.unity
+    guid: e6921e3fb8f1c0046a1612528236c9d7
+  - enabled: 1
+    path: Assets/Assets/Scenes/UpdateScenes/NewsUpdatesViolet.unity
+    guid: 6e0d5b6d5db7ab64bbeb33784e2b8a3e
+  - enabled: 1
+    path: Assets/Assets/Scenes/UpdateScenes/NewsUpdatesYellow.unity
+    guid: 9e5babeb14dc9914c9548c69bd3e353f
   - enabled: 1
     path: Assets/Assets/Scenes/UpdateScenes/WeatherUpdates.unity
     guid: 7c631ec40c9634ec281a135f7d0fd5cb
+  - enabled: 1
+    path: Assets/Assets/Scenes/UpdateScenes/WeatherUpdatesBlack.unity
+    guid: 61743fe668510f149bb338146d8abe12
+  - enabled: 1
+    path: Assets/Assets/Scenes/UpdateScenes/WeatherUpdatesGreen.unity
+    guid: a9958ad6dd0cbac45862fb69f990dfd3
+  - enabled: 1
+    path: Assets/Assets/Scenes/UpdateScenes/WeatherUpdatesRed.unity
+    guid: 74bd202a05bf2034583d4a95025d990f
+  - enabled: 1
+    path: Assets/Assets/Scenes/UpdateScenes/WeatherUpdatesViolet.unity
+    guid: 81d0b167dde21a646bfa213511d3b429
+  - enabled: 1
+    path: Assets/Assets/Scenes/UpdateScenes/WeatherUpdatesYellow.unity
+    guid: f00d5d831d2529f4b866fe68adc74bf8
+  - enabled: 1
+    path: Assets/Assets/Scenes/UserGuideScenes/blackhelp.unity
+    guid: d4e2de60af9652f4b96427113a2822f5
+  - enabled: 1
+    path: Assets/Assets/Scenes/UserGuideScenes/bluehelp.unity
+    guid: c14b808723acb684a94d269328ca7f2f
+  - enabled: 1
+    path: Assets/Assets/Scenes/UserGuideScenes/greenhelp.unity
+    guid: ff87fe68bed05504fb09e3b079e60776
+  - enabled: 1
+    path: Assets/Assets/Scenes/UserGuideScenes/redhelp.unity
+    guid: 2d79da0871982ea4da1ca27b5d1eebf3
+  - enabled: 1
+    path: Assets/Assets/Scenes/UserGuideScenes/violethelp.unity
+    guid: ab49c7b26d933fe46b0c3913211dc2b1
+  - enabled: 1
+    path: Assets/Assets/Scenes/UserGuideScenes/yellowhelp.unity
+    guid: 6ca9e5d010e67f14589e25202dea24cd
   m_configObjects: {}

@@ -16,30 +16,77 @@ public class EHManager : MonoBehaviour
 
     public void UpdateScene()
     {
-        SceneManager.LoadScene("UpdateScene");
+        if (PlayerPrefs.GetString("Theme") == "Yellow")
+        {
+            SceneManager.LoadScene("NormalYellow");
+        }
+        else if (PlayerPrefs.GetString("Theme") == "Green")
+        {
+            SceneManager.LoadScene("NormalGreen");
+        }
+        else if (PlayerPrefs.GetString("Theme") == "Red")
+        {
+            SceneManager.LoadScene("NormalRed");
+        }
+        else if (PlayerPrefs.GetString("Theme") == "Black")
+        {
+            SceneManager.LoadScene("NormalBlack");
+        }
+        else if (PlayerPrefs.GetString("Theme") == "Violet")
+        {
+            SceneManager.LoadScene("NormalViolet");
+        }
+        else
+        {
+            SceneManager.LoadScene("titleScreen");
+        }
     }
     // Update is called once per frame
     void Update(){
         if (Application.platform == RuntimePlatform.Android){
-            if (Input.GetKeyDown(KeyCode.Escape)){
-                UpdateScene();
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                if (PlayerPrefs.GetString("Theme") == "Yellow")
+                {
+                    SceneManager.LoadScene("NormalYellow");
+                }
+                else if (PlayerPrefs.GetString("Theme") == "Green")
+                {
+                    SceneManager.LoadScene("NormalGreen");
+                }
+                else if (PlayerPrefs.GetString("Theme") == "Red")
+                {
+                    SceneManager.LoadScene("NormalRed");
+                }
+                else if (PlayerPrefs.GetString("Theme") == "Black")
+                {
+                    SceneManager.LoadScene("NormalBlack");
+                }
+                else if (PlayerPrefs.GetString("Theme") == "Violet")
+                {
+                    SceneManager.LoadScene("NormalViolet");
+                }
+                else
+                {
+                    SceneManager.LoadScene("titleScreen");
+                }
             }
         }
     }
 
     public void Dial()
     {
-        Application.OpenURL("tel://09274073781");
+        Application.OpenURL("tel://09275017109");
     }
 
     public void Dial2()
     {
-        Application.OpenURL("tel://09274073781");
+        Application.OpenURL("tel://09275017109");
     }
 
     public void Dial3()
     {
-        Application.OpenURL("tel://09274073781");
+        Application.OpenURL("tel://09275017109");
     }
 
     public void SAMPLE()

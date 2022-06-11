@@ -17,40 +17,175 @@ public class SafetyTitleManager : MonoBehaviour {
 	}
     public void TitleScene()
     {
-        SceneManager.LoadScene("titleScreen");
+        if (PlayerPrefs.GetString("Theme") == "Yellow")
+        {
+            SceneManager.LoadScene("NormalYellow");
+        }
+        else if (PlayerPrefs.GetString("Theme") == "Green")
+        {
+            SceneManager.LoadScene("NormalGreen");
+        }
+        else if (PlayerPrefs.GetString("Theme") == "Red")
+        {
+            SceneManager.LoadScene("NormalRed");
+        }
+        else if (PlayerPrefs.GetString("Theme") == "Black")
+        {
+            SceneManager.LoadScene("NormalBlack");
+        }
+        else if (PlayerPrefs.GetString("Theme") == "Violet")
+        {
+            SceneManager.LoadScene("NormalViolet");
+        }
+        else
+        {
+            SceneManager.LoadScene("titleScreen");
+        }
     }
 
 
     public void FloodScene()
     {
-        SceneManager.LoadScene("FloodScene");
+        if (PlayerPrefs.GetString("Theme") == "Yellow")
+        {
+            SceneManager.LoadScene("FloodSceneYellow");
+        }
+        else if (PlayerPrefs.GetString("Theme") == "Green")
+        {
+            SceneManager.LoadScene("FloodSceneGreen");
+        }
+        else if (PlayerPrefs.GetString("Theme") == "Red")
+        {
+            SceneManager.LoadScene("FloodSceneRed");
+        }
+        else if (PlayerPrefs.GetString("Theme") == "Black")
+        {
+            SceneManager.LoadScene("FloodSceneBlack");
+        }
+        else if (PlayerPrefs.GetString("Theme") == "Violet")
+        {
+            SceneManager.LoadScene("FloodSceneViolet");
+        }
+        else
+        {
+            SceneManager.LoadScene("FloodScene");
+        }
     }
+
     public void EQScene()
     {
-        SceneManager.LoadScene("EQScene");
+        if (PlayerPrefs.GetString("Theme") == "Yellow")
+        {
+            SceneManager.LoadScene("EQSceneYellow");
+        }
+        else if (PlayerPrefs.GetString("Theme") == "Green")
+        {
+            SceneManager.LoadScene("EQSceneGreen");
+        }
+        else if (PlayerPrefs.GetString("Theme") == "Red")
+        {
+            SceneManager.LoadScene("EQSceneRed");
+        }
+        else if (PlayerPrefs.GetString("Theme") == "Black")
+        {
+            SceneManager.LoadScene("EQSceneBlack");
+        }
+        else if (PlayerPrefs.GetString("Theme") == "Violet")
+        {
+            SceneManager.LoadScene("EQSceneViolet");
+        }
+        else
+        {
+            SceneManager.LoadScene("EQScene");
+        }
     }
     public void FireScene()
     {
-        SceneManager.LoadScene("FireScene");
+        if (PlayerPrefs.GetString("Theme") == "Yellow")
+        {
+            SceneManager.LoadScene("FireSceneYellow");
+        }
+        else if (PlayerPrefs.GetString("Theme") == "Green")
+        {
+            SceneManager.LoadScene("FireSceneGreen");
+        }
+        else if (PlayerPrefs.GetString("Theme") == "Red")
+        {
+            SceneManager.LoadScene("FireSceneRed");
+        }
+        else if (PlayerPrefs.GetString("Theme") == "Black")
+        {
+            SceneManager.LoadScene("FireSceneBlack");
+        }
+        else if (PlayerPrefs.GetString("Theme") == "Violet")
+        {
+            SceneManager.LoadScene("FireSceneViolet");
+        }
+        else
+        {
+            SceneManager.LoadScene("FireScene");
+        }
     }
     public void CovidScene()
     {
-        SceneManager.LoadScene("Covidscene");
+        if (PlayerPrefs.GetString("Theme") == "Yellow")
+        {
+            SceneManager.LoadScene("CovidSceneYellow");
+        }
+        else if (PlayerPrefs.GetString("Theme") == "Green")
+        {
+            SceneManager.LoadScene("CovidSceneGreen");
+        }
+        else if (PlayerPrefs.GetString("Theme") == "Red")
+        {
+            SceneManager.LoadScene("CovidSceneRed");
+        }
+        else if (PlayerPrefs.GetString("Theme") == "Black")
+        {
+            SceneManager.LoadScene("CovidSceneBlack");
+        }
+        else if (PlayerPrefs.GetString("Theme") == "Violet")
+        {
+            SceneManager.LoadScene("CovidSceneViolet");
+        }
+        else
+        {
+            SceneManager.LoadScene("CovidScene");
+        }
     }
 
-    void AndriodBack()
+    private void AndriodBack()
     {
         if (Application.platform == RuntimePlatform.Android)
         {
-            if (Input.GetKey(KeyCode.Escape))
+            if (Input.GetKeyDown(KeyCode.Escape))
             {
-                TitleScene();
-                return;
+                if (PlayerPrefs.GetString("Theme") == "Yellow")
+                {
+                    SceneManager.LoadScene("NormalYellow");
+                }
+                else if (PlayerPrefs.GetString("Theme") == "Green")
+                {
+                    SceneManager.LoadScene("NormalGreen");
+                }
+                else if (PlayerPrefs.GetString("Theme") == "Red")
+                {
+                    SceneManager.LoadScene("NormalRed");
+                }
+                else if (PlayerPrefs.GetString("Theme") == "Black")
+                {
+                    SceneManager.LoadScene("NormalBlack");
+                }
+                else if (PlayerPrefs.GetString("Theme") == "Violet")
+                {
+                    SceneManager.LoadScene("NormalViolet");
+                }
+                else
+                {
+                    SceneManager.LoadScene("titleScreen");
+                }
             }
-
         }
-
-
     }
 
 }
