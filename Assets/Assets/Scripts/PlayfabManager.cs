@@ -26,7 +26,7 @@ public class PlayfabManager : MonoBehaviour
 
     void Start()
     {
-        Login();
+       Login();
     }
 
 
@@ -51,10 +51,10 @@ public class PlayfabManager : MonoBehaviour
 
     private bool ValidateEmail2(string strEmail)
     {
-      
+
         if ((strEmail).Contains("@gmail.com"))
         {
-            return true;          
+            return true;
         }
         if ((strEmail).Contains("@cavsafe.com"))
         {
@@ -103,7 +103,7 @@ public class PlayfabManager : MonoBehaviour
             return;
         }
 
-       
+      
         var request = new RegisterPlayFabUserRequest
         {
             Email = emailInput.text,
@@ -112,6 +112,14 @@ public class PlayfabManager : MonoBehaviour
         };
         PlayFabClientAPI.RegisterPlayFabUser(request, OnRegisterSuccess, OnError);
     }
+
+
+    void OnRegisterSuccess(RegisterPlayFabUserResult result)
+    {
+        messageText.text = "Registered and logged in!";
+        SaveRole();
+    }
+      
 
     public void SaveRole()
     {
@@ -124,28 +132,16 @@ public class PlayfabManager : MonoBehaviour
         PlayFabClientAPI.UpdateUserData(request, OnDataSend, OnError);
     }
 
+    void OnDataSend(UpdateUserDataResult result)
+    {
+        Debug.Log("User Data Added");
+
+    }
+
+
     public void GetRole()
     {
         PlayFabClientAPI.GetUserData(new GetUserDataRequest(), OnDataReceived, OnError);
-    }
-
-    public void GetTheme()
-    {
-        PlayFabClientAPI.GetTitleData(new GetTitleDataRequest(), OnTitleDataReceived, OnError);
-    }
-
-    void OnTitleDataReceived(GetTitleDataResult result)
-    {
-        if (result.Data == null || result.Data.ContainsKey("Theme") == false)
-        {
-            Debug.Log("No message");
-            return;
-        }
-            
-        //intTheme = int.Parse(result.Data["Theme"]);
-        PlayerPrefs.SetString("Theme", result.Data["Theme"]);
-        PlayerPrefs.Save();
-
     }
 
     void OnDataReceived(GetUserDataResult result)
@@ -154,80 +150,39 @@ public class PlayfabManager : MonoBehaviour
         {
             PlayerPrefs.SetString("Role", result.Data["Role"].Value.ToString());
             PlayerPrefs.Save();
+            Debug.Log("with Role");
         }
         else
         {
-            strRole = "Normal";       
+            PlayerPrefs.SetString("Role", "Guest");
+            PlayerPrefs.Save();
+            Debug.Log("guest Role");
         }
-
-       
-
     }
+      
 
-
-
-    void OnRegisterSuccess(RegisterPlayFabUserResult result)
-    {     
-        messageText.text = "Registered and logged in!";
-        SaveRole();
-    }
-
-    void OnDataSend(UpdateUserDataResult result)
+    public void GetTheme()
     {
-        Debug.Log("User Data Added");
-        //Debug.Log("Registered and logged in!");
+        PlayFabClientAPI.GetTitleData(new GetTitleDataRequest(), OnTitleDataReceived, OnError);
     }
 
-
-
-    public void LoginButton()
+    void OnTitleDataReceived(GetTitleDataResult result)
     {
-        var request = new LoginWithEmailAddressRequest
-        {
-            Email = emailInput.text,
-            Password = passwordInput.text
-        };
-        Debug.Log("Current user is " + emailInput.text);
-        PlayFabClientAPI.LoginWithEmailAddress(request, OnLoginSuccess, OnError);
-    }
+        //if (result.Data != null || result.Data.ContainsKey("Theme"))
+        //{
+        //    PlayerPrefs.SetString("Theme", result.Data["Theme"]);
+        //    PlayerPrefs.Save();
 
-    public void ResetPasswordButton()
-    {
-        var request = new SendAccountRecoveryEmailRequest
-        {
-            Email = emailInput.text,
-            TitleId = "70500"
-        };
-        PlayFabClientAPI.SendAccountRecoveryEmail(request, OnPasswordReset, OnError);
-    }
-    void OnPasswordReset(SendAccountRecoveryEmailResult result)
-    {
-        messageText.text = "Password reset mail sent!";
-    }
+        //    Debug.Log("with Theme");
+        //}
+        //else
+        //{       
+        //    PlayerPrefs.SetString("Theme", "No Theme");
+        //    PlayerPrefs.Save();
 
+        //    Debug.Log("guest Theme");
+        //}
 
-
-    //Logging in (Episode 2)
-
-    void Login()
-    {
-        var request = new LoginWithCustomIDRequest
-        {
-            CustomId = SystemInfo.deviceUniqueIdentifier,
-            CreateAccount = true,
-            InfoRequestParameters = new GetPlayerCombinedInfoRequestParams
-            {
-                GetPlayerProfile = true
-            }
-        };
-
-    }
-
-    void OnLoginSuccess(LoginResult result)
-    {
-        GetTheme();
-        GetRole();
-                
         if (PlayerPrefs.GetString("Role") == "Admin")
         {
             if (PlayerPrefs.GetString("Theme") == "Yellow")
@@ -254,7 +209,7 @@ public class PlayfabManager : MonoBehaviour
             {
                 SceneManager.LoadScene("adminScreen");
             }
-              
+
         }
         else if (PlayerPrefs.GetString("Role") == "Normal")
         {
@@ -280,15 +235,74 @@ public class PlayfabManager : MonoBehaviour
             }
             else
             {
-                SceneManager.LoadScene("adminScreen");
+                SceneManager.LoadScene("titleScreen");
             }
         }
         else
-        {           
-            SceneManager.LoadScene("GuestScreen");            
+        {
+            SceneManager.LoadScene("GuestScreen");
         }
+
     }
 
+
+  
+
+
+
+    public void LoginButton()
+    {
+        var request = new LoginWithEmailAddressRequest
+        {
+            Email = emailInput.text,
+            Password = passwordInput.text
+        };
+
+        PlayerPrefs.SetString("Message", "Welcome " + emailInput.text + "!");
+        PlayerPrefs.Save();
+
+        Debug.Log("Current user is " + emailInput.text);
+        PlayFabClientAPI.LoginWithEmailAddress(request, OnLoginSuccess, OnError);
+    }
+
+    void OnLoginSuccess(LoginResult result)
+    {
+        GetRole();
+        GetTheme();      
+
+  
+    }
+
+
+    public void ResetPasswordButton()
+    {
+        var request = new SendAccountRecoveryEmailRequest
+        {
+            Email = emailInput.text,
+            TitleId = "70500"
+        };
+        PlayFabClientAPI.SendAccountRecoveryEmail(request, OnPasswordReset, OnError);
+    }
+    void OnPasswordReset(SendAccountRecoveryEmailResult result)
+    {
+        messageText.text = "Password reset mail sent!";
+    }
+
+    void Login()
+    {
+        var request = new LoginWithCustomIDRequest
+        {
+            CustomId = SystemInfo.deviceUniqueIdentifier,
+            CreateAccount = true,
+            InfoRequestParameters = new GetPlayerCombinedInfoRequestParams
+            {
+                GetPlayerProfile = true
+            }
+        };
+
+    }
+
+    
     void OnError(PlayFabError error)
     {
         messageText.text = error.ErrorMessage;
@@ -311,7 +325,7 @@ public class PlayfabManager : MonoBehaviour
     void StartGuest()
     {
         Debug.Log("CavSafe App Start!");
-        SceneManager.LoadScene("titleScreen");
+        SceneManager.LoadScene("GuestScreen");
     }
 
     public void LogoutButton()
@@ -320,6 +334,11 @@ public class PlayfabManager : MonoBehaviour
         PlayFabClientAPI.ForgetAllCredentials();
         messageText.text = "Logged Out!";
 
+        SceneManager.LoadScene("Login");
+    }
+   
+    public void LogoutButton2()
+    {
         SceneManager.LoadScene("Login");
     }
 
@@ -378,33 +397,11 @@ public class PlayfabManager : MonoBehaviour
             SceneManager.LoadScene("bluehelp");
         }
     }
-    public void LoginButtonTitleScreen()
-    {
-        if (PlayerPrefs.GetString("Theme") == "Yellow")
-        {
-            SceneManager.LoadScene("LoginYellow");
-        }
-        else if (PlayerPrefs.GetString("Theme") == "Green")
-        {
-            SceneManager.LoadScene("LoginGreen");
-        }
-        else if (PlayerPrefs.GetString("Theme") == "Red")
-        {
-            SceneManager.LoadScene("LoginRed");
-        }
-        else if (PlayerPrefs.GetString("Theme") == "Black")
-        {
-            SceneManager.LoadScene("LoginBlack");
-        }
-        else if (PlayerPrefs.GetString("Theme") == "Violet")
-        {
-            SceneManager.LoadScene("LoginViolet");
-        }
-        else
-        {
-            SceneManager.LoadScene("Login");
-        }
-    }
+    //public void LoginButtonTitleScreen()
+    //{
+    //    SceneManager.LoadScene("Login");
+    //}
+
     public void titleScreen()
     {
         if (PlayerPrefs.GetString("Theme") == "Yellow")
@@ -436,96 +433,4 @@ public class PlayfabManager : MonoBehaviour
     {
         SceneManager.LoadScene("Map");
     }
-
-    //void Update()
-    //{
-    //    if (Application.platform == RuntimePlatform.Android)
-    //    {
-    //        if (Input.GetKey(KeyCode.Escape))
-    //        {
-    //            Application.Quit();
-    //        }
-    //    }
-    //}
-
-
-    /*
-        //Player data (Episode 3)
-        public void GetAppearance()
-        void OnDataRecieved(GetUserDataResult result)
-        public void SaveAppearance()
-        void OnDataSend(UpdateUserDataResult result)
-
-        //Title data (Episode 4)
-        void GetTitleData()
-        void OnCharactersDataReceived(GetUserDataResult result)
-    */
-
-
-    /* [SerializeField] GameObject signUpTab, logInTab, startPanel, HUD;
-     public Text username, userEmail, userPassword, userEmailLogin, userPasswordLogin, errorSignup, errorLogin;
-     string encryptedPassword;
-
-     public void SwitchToSignUpTab() {
-         signUpTab.SetActive(true);
-         logInTab.SetActive(false);
-         errorSignup.text = "";
-         errorLogin.text = "";
-     }
-     public void SwitchToLoginTab() {
-         signUpTab.SetActive(false);
-         logInTab.SetActive(true);
-         errorSignup.text = "";
-         errorLogin.text = "";
-     }
-
-     string Encrypt(string pass)
-     {
-         System.Security.Cryptography.MD5CryptoServiceProvider x = new System.Security.Cryptography.MD5CryptoServiceProvider();
-         byte[] bs = System.TextEncoding.UTF8.GetBytes(pass);
-         bs = x.ComputerHash(bs);
-         System.Text.StringBuilder s = new System.Text.StringBuilder();
-         foreach (byte b in bs)
-         {
-             s.Append(b.ToString("x2").ToLower());
-         }
-         return s.ToString();
-     }
-
-     public void SignUp() { 
-         var registerRequest = new RegisterPlayFabUserRequest { Email = userEmail.text, Password = Encrypt(userPassword.text), Username = username.text };
-         PlayFabClientAPI.RegisterPlayFabUser(registerRequest, RegisterSuccess, RegisterError);
-     }
-
-     public void RegisterSuccess(RegisterPlayFabUserResult result){
-         errorSignUp.text = "";
-         errorLogIn.text = "";
-         StartGame();
- }
-     public void RegisterError(PlayFabError error)
- {
-     errorSignUp.text = error.GenerateErrorReport();
-
- }
-     public void LogIn() {
-         var request = new LogInWithEmailAddressRequest { Email = userEmailLogin.text, Password = Encrypt(userPasswordLogin.text), Username = username.text };
-         PlayFabClientAPI.LogInWithEmailAddress(request, LogInSuccess, LogInError);
-     }
-
-     public void LogInSuccess(LoginResult result)
- {
-     errorSignUp.text = "";
-     errorLogIn.text = "";
-     StartGame();
- }
-
-     public void LogInError(PlayFabError error)
- {
-     errorLogin.text = error.GenerateErrorReport();
- }
-     void StartGame()
- {
-     startPanel.SetActive(false);
-     HUD.SetActive(true);
- }*/
 }

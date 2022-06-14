@@ -20,35 +20,44 @@ public class UserGuideManager : MonoBehaviour
     }
     public void Scene1()
     {
-        if (PlayerPrefs.GetString("Theme") == "Yellow")
+        if (PlayerPrefs.GetString("Role") == "Normal")
         {
-            SceneManager.LoadScene("yellowhelp");
-        }
-        else if (PlayerPrefs.GetString("Theme") == "Green")
-        {
-            SceneManager.LoadScene("greenhelp");
-        }
-        else if (PlayerPrefs.GetString("Theme") == "Red")
-        {
-            SceneManager.LoadScene("redhelp");
-        }
-        else if (PlayerPrefs.GetString("Theme") == "Black")
-        {
-            SceneManager.LoadScene("blackhelp");
-        }
-        else if (PlayerPrefs.GetString("Theme") == "Violet")
-        {
-            SceneManager.LoadScene("violethelp");
+            if (PlayerPrefs.GetString("Theme") == "Yellow")
+            {
+                SceneManager.LoadScene("yellowhelp");
+            }
+            else if (PlayerPrefs.GetString("Theme") == "Green")
+            {
+                SceneManager.LoadScene("greenhelp");
+            }
+            else if (PlayerPrefs.GetString("Theme") == "Red")
+            {
+                SceneManager.LoadScene("redhelp");
+            }
+            else if (PlayerPrefs.GetString("Theme") == "Black")
+            {
+                SceneManager.LoadScene("blackhelp");
+            }
+            else if (PlayerPrefs.GetString("Theme") == "Violet")
+            {
+                SceneManager.LoadScene("violethelp");
+            }
+            else
+            {
+                SceneManager.LoadScene("bluehelp");
+            }
         }
         else
         {
-            SceneManager.LoadScene("bluehelp");
+            SceneManager.LoadScene("Guesthelp");
         }
     }
 
     public void TitleScreen()
     {
-        if (PlayerPrefs.GetString("Theme") == "Yellow")
+        if (PlayerPrefs.GetString("Role") == "Normal")
+        {
+            if (PlayerPrefs.GetString("Theme") == "Yellow")
         {
             SceneManager.LoadScene("NormalYellow");
         }
@@ -72,6 +81,11 @@ public class UserGuideManager : MonoBehaviour
         {
             SceneManager.LoadScene("titleScreen");
         }
+        }
+        else
+        {
+            SceneManager.LoadScene("GuestScreen");
+        }
     }
 
     private void AndriodBack()
@@ -80,7 +94,9 @@ public class UserGuideManager : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Escape))
             {
-                if (PlayerPrefs.GetString("Theme") == "Yellow")
+                if (PlayerPrefs.GetString("Role") == "Normal")
+                {
+                    if (PlayerPrefs.GetString("Theme") == "Yellow")
                 {
                     SceneManager.LoadScene("NormalYellow");
                 }
@@ -103,6 +119,11 @@ public class UserGuideManager : MonoBehaviour
                 else
                 {
                     SceneManager.LoadScene("titleScreen");
+                }
+                }
+                else
+                {
+                    SceneManager.LoadScene("GuestScreen");
                 }
             }
         }

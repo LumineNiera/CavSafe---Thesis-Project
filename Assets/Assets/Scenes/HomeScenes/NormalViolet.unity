@@ -1380,13 +1380,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   notifText: {fileID: 1545518225}
-  SkySlideUp: []
-  displayMorning: {fileID: 0}
-  displayAfternoon: {fileID: 0}
-  displayEvening: {fileID: 0}
-  skyMorning: {fileID: 0}
-  skyAfternoon: {fileID: 0}
-  skyEvening: {fileID: 0}
 --- !u!114 &1001808501
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1626,7 +1619,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 2de13d2e577024241b1bb550784ac3bb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7747f568f00d47f4c87463c5df546359, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 0

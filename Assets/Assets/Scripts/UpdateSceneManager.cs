@@ -17,7 +17,9 @@ public class UpdateSceneManager : MonoBehaviour {
 
     public void NewsUpdate()
     {
-        if (PlayerPrefs.GetString("Theme") == "Yellow")
+        if (PlayerPrefs.GetString("Role") == "Normal")
+        {
+            if (PlayerPrefs.GetString("Theme") == "Yellow")
         {
             SceneManager.LoadScene("NewsUpdatesYellow");
         }
@@ -41,11 +43,18 @@ public class UpdateSceneManager : MonoBehaviour {
         {
             SceneManager.LoadScene("NewsUpdates");
         }
+        }
+        else
+        {
+            SceneManager.LoadScene("NewsUpdatesGuest");
+        }
     }
 
     public void WeatherUpdate()
     {
-        if (PlayerPrefs.GetString("Theme") == "Yellow")
+        if (PlayerPrefs.GetString("Role") == "Normal")
+        {
+            if (PlayerPrefs.GetString("Theme") == "Yellow")
         {
             SceneManager.LoadScene("WeatherUpdatesYellow");
         }
@@ -69,10 +78,17 @@ public class UpdateSceneManager : MonoBehaviour {
         {
             SceneManager.LoadScene("WeatherUpdates");
         }
+        }
+        else
+        {
+            SceneManager.LoadScene("WeatherUpdatesGuest");
+        }
     }
     public void CovidUpdate()
     {
-        if (PlayerPrefs.GetString("Theme") == "Yellow")
+        if (PlayerPrefs.GetString("Role") == "Normal")
+        {
+            if (PlayerPrefs.GetString("Theme") == "Yellow")
         {
             SceneManager.LoadScene("CovidUpdatesYellow");
         }
@@ -96,14 +112,22 @@ public class UpdateSceneManager : MonoBehaviour {
         {
             SceneManager.LoadScene("CovidUpdates");
         }
+        }
+        else
+        {
+            SceneManager.LoadScene("CovidUpdatesGuest");
+        }
     }
     public void Map() {
         SceneManager.LoadScene("Map");
     }
 
     public void EmergencyHotline()
+
     {
-        if (PlayerPrefs.GetString("Theme") == "Yellow")
+        if (PlayerPrefs.GetString("Role") == "Normal")
+        {
+            if (PlayerPrefs.GetString("Theme") == "Yellow")
         {
             SceneManager.LoadScene("EmergencyHotlineYellow");
         }
@@ -127,10 +151,17 @@ public class UpdateSceneManager : MonoBehaviour {
         {
             SceneManager.LoadScene("EmergencyHotline");
         }
+        }
+        else
+        {
+            SceneManager.LoadScene("EmergencyHotlineGuest");
+        }
     }
     public void TitleScreen()
     {
-        if (PlayerPrefs.GetString("Theme") == "Yellow")
+        if (PlayerPrefs.GetString("Role") == "Normal")
+        {
+            if (PlayerPrefs.GetString("Theme") == "Yellow")
         {
             SceneManager.LoadScene("NormalYellow");
         }
@@ -154,14 +185,22 @@ public class UpdateSceneManager : MonoBehaviour {
         {
             SceneManager.LoadScene("titleScreen");
         }
+        }
+        else
+        {
+            SceneManager.LoadScene("GuestScreen");
+        }
     }
 
 
     private void AndriodBack(){
+
         if (Application.platform == RuntimePlatform.Android){
             if (Input.GetKeyDown(KeyCode.Escape))
             {
-                if (PlayerPrefs.GetString("Theme") == "Yellow")
+                if (PlayerPrefs.GetString("Role") == "Normal")
+                {
+                    if (PlayerPrefs.GetString("Theme") == "Yellow")
                 {
                     SceneManager.LoadScene("NormalYellow");
                 }
@@ -184,6 +223,11 @@ public class UpdateSceneManager : MonoBehaviour {
                 else
                 {
                     SceneManager.LoadScene("titleScreen");
+                }
+                }
+                else
+                {
+                    SceneManager.LoadScene("GuestScreen");
                 }
             }
         }

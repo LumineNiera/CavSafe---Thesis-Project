@@ -70,88 +70,143 @@ public class TipsManager : MonoBehaviour
     }
 
     public void SafetySCreen()
+    //start
     {
-        if (PlayerPrefs.GetString("Theme") == "Yellow")
+        if (PlayerPrefs.GetString("Role") == "Normal")
         {
-            SceneManager.LoadScene("SafetyTipsYellow");
-        }
-        else if (PlayerPrefs.GetString("Theme") == "Green")
-        {
-            SceneManager.LoadScene("SafetyTipsGreen");
-        }
-        else if (PlayerPrefs.GetString("Theme") == "Red")
-        {
-            SceneManager.LoadScene("SafetyTipsRed");
-        }
-        else if (PlayerPrefs.GetString("Theme") == "Black")
-        {
-            SceneManager.LoadScene("SafetyTipsBlack");
-        }
-        else if (PlayerPrefs.GetString("Theme") == "Violet")
-        {
-            SceneManager.LoadScene("SafetyTipsViolet");
+            if (PlayerPrefs.GetString("Theme") == "Yellow")
+            {
+                SceneManager.LoadScene("SafetyTipsYellow");
+            }
+            else if (PlayerPrefs.GetString("Theme") == "Green")
+            {
+                SceneManager.LoadScene("SafetyTipsGreen");
+            }
+            else if (PlayerPrefs.GetString("Theme") == "Red")
+            {
+                SceneManager.LoadScene("SafetyTipsRed");
+            }
+            else if (PlayerPrefs.GetString("Theme") == "Black")
+            {
+                SceneManager.LoadScene("SafetyTipsBlack");
+            }
+            else if (PlayerPrefs.GetString("Theme") == "Violet")
+            {
+                SceneManager.LoadScene("SafetyTipsViolet");
+            }
+            else
+            {
+                SceneManager.LoadScene("SafetyTips");
+            }
         }
         else
         {
-            SceneManager.LoadScene("SafetyTips");
+            SceneManager.LoadScene("SafetyTipsGuest");
         }
     }
+    //end
 
     public void TitleScreen()
+    //start
     {
-        if (PlayerPrefs.GetString("Theme") == "Yellow")
+        if (PlayerPrefs.GetString("Role") == "Admin")
         {
-            SceneManager.LoadScene("NormalYellow");
+
+            if (PlayerPrefs.GetString("Theme") == "Yellow")
+            {
+                SceneManager.LoadScene("AdminYellow");
+            }
+            else if (PlayerPrefs.GetString("Theme") == "Green")
+            {
+                SceneManager.LoadScene("AdminGreen");
+            }
+            else if (PlayerPrefs.GetString("Theme") == "Red")
+            {
+                SceneManager.LoadScene("AdminRed");
+            }
+            else if (PlayerPrefs.GetString("Theme") == "Black")
+            {
+                SceneManager.LoadScene("AdminBlack");
+            }
+            else if (PlayerPrefs.GetString("Theme") == "Violet")
+            {
+                SceneManager.LoadScene("AdminViolet");
+            }
+            else
+            {
+                SceneManager.LoadScene("adminScreen");
+            }
         }
-        else if (PlayerPrefs.GetString("Theme") == "Green")
+        else if (PlayerPrefs.GetString("Role") == "Normal")
         {
-            SceneManager.LoadScene("NormalGreen");
-        }
-        else if (PlayerPrefs.GetString("Theme") == "Red")
-        {
-            SceneManager.LoadScene("NormalRed");
-        }
-        else if (PlayerPrefs.GetString("Theme") == "Black")
-        {
-            SceneManager.LoadScene("NormalBlack");
-        }
-        else if (PlayerPrefs.GetString("Theme") == "Violet")
-        {
-            SceneManager.LoadScene("NormalViolet");
+            if (PlayerPrefs.GetString("Theme") == "Yellow")
+            {
+                SceneManager.LoadScene("NormalYellow");
+            }
+            else if (PlayerPrefs.GetString("Theme") == "Green")
+            {
+                SceneManager.LoadScene("NormalGreen");
+            }
+            else if (PlayerPrefs.GetString("Theme") == "Red")
+            {
+                SceneManager.LoadScene("NormalRed");
+            }
+            else if (PlayerPrefs.GetString("Theme") == "Black")
+            {
+                SceneManager.LoadScene("NormalBlack");
+            }
+            else if (PlayerPrefs.GetString("Theme") == "Violet")
+            {
+                SceneManager.LoadScene("NormalViolet");
+            }
+            else
+            {
+                SceneManager.LoadScene("titleScreen");
+            }
         }
         else
         {
-            SceneManager.LoadScene("titleScreen");
+            SceneManager.LoadScene("GuestScreen");
         }
     }
+    //end
 
     public void CovidScene()
+    //start
     {
-        if (PlayerPrefs.GetString("Theme") == "Yellow")
+       if (PlayerPrefs.GetString("Role") == "Normal")
         {
-            SceneManager.LoadScene("CovidSceneYellow");
-        }
-        else if (PlayerPrefs.GetString("Theme") == "Green")
-        {
-            SceneManager.LoadScene("CovidSceneGreen");
-        }
-        else if (PlayerPrefs.GetString("Theme") == "Red")
-        {
-            SceneManager.LoadScene("CovidSceneRed");
-        }
-        else if (PlayerPrefs.GetString("Theme") == "Black")
-        {
-            SceneManager.LoadScene("CovidSceneBlack");
-        }
-        else if (PlayerPrefs.GetString("Theme") == "Violet")
-        {
-            SceneManager.LoadScene("CovidSceneViolet");
+            if (PlayerPrefs.GetString("Theme") == "Yellow")
+            {
+                SceneManager.LoadScene("CovidSceneYellow");
+            }
+            else if (PlayerPrefs.GetString("Theme") == "Green")
+            {
+                SceneManager.LoadScene("CovidSceneGreen");
+            }
+            else if (PlayerPrefs.GetString("Theme") == "Red")
+            {
+                SceneManager.LoadScene("CovidSceneRed");
+            }
+            else if (PlayerPrefs.GetString("Theme") == "Black")
+            {
+                SceneManager.LoadScene("CovidSceneBlack");
+            }
+            else if (PlayerPrefs.GetString("Theme") == "Violet")
+            {
+                SceneManager.LoadScene("CovidSceneViolet");
+            }
+            else
+            {
+                SceneManager.LoadScene("CovidScene");
+            }
         }
         else
         {
-            SceneManager.LoadScene("CovidScene");
+            SceneManager.LoadScene("CovidGuest");
         }
     }
+    //end
 
     void AndroidBack()
     {
@@ -165,32 +220,41 @@ public class TipsManager : MonoBehaviour
                     CloseAlltips();
                 }
                 else
+                //start
                 {
-                    if (PlayerPrefs.GetString("Theme") == "Yellow")
+                     if (PlayerPrefs.GetString("Role") == "Normal")
                     {
-                        SceneManager.LoadScene("SafetyTipsYellow");
-                    }
-                    else if (PlayerPrefs.GetString("Theme") == "Green")
-                    {
-                        SceneManager.LoadScene("SafetyTipsGreen");
-                    }
-                    else if (PlayerPrefs.GetString("Theme") == "Red")
-                    {
-                        SceneManager.LoadScene("SafetyTipsRed");
-                    }
-                    else if (PlayerPrefs.GetString("Theme") == "Black")
-                    {
-                        SceneManager.LoadScene("SafetyTipsBlack");
-                    }
-                    else if (PlayerPrefs.GetString("Theme") == "Violet")
-                    {
-                        SceneManager.LoadScene("SafetyTipsViolet");
+                        if (PlayerPrefs.GetString("Theme") == "Yellow")
+                        {
+                            SceneManager.LoadScene("SafetyTipsYellow");
+                        }
+                        else if (PlayerPrefs.GetString("Theme") == "Green")
+                        {
+                            SceneManager.LoadScene("SafetyTipsGreen");
+                        }
+                        else if (PlayerPrefs.GetString("Theme") == "Red")
+                        {
+                            SceneManager.LoadScene("SafetyTipsRed");
+                        }
+                        else if (PlayerPrefs.GetString("Theme") == "Black")
+                        {
+                            SceneManager.LoadScene("SafetyTipsBlack");
+                        }
+                        else if (PlayerPrefs.GetString("Theme") == "Violet")
+                        {
+                            SceneManager.LoadScene("SafetyTipsViolet");
+                        }
+                        else
+                        {
+                            SceneManager.LoadScene("SafetyTips");
+                        }
                     }
                     else
                     {
-                        SceneManager.LoadScene("SafetyTips");
+                        SceneManager.LoadScene("SafetyTipsGuest");
                     }
                 }
+                //end
             }
 
         }

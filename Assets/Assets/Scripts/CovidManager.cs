@@ -18,7 +18,9 @@ public class CovidManager : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.Escape))
             {
-                if (PlayerPrefs.GetString("Theme") == "Yellow")
+                if (PlayerPrefs.GetString("Role") == "Normal")
+                {
+                    if (PlayerPrefs.GetString("Theme") == "Yellow")
                 {
                     SceneManager.LoadScene("NormalYellow");
                 }
@@ -42,6 +44,11 @@ public class CovidManager : MonoBehaviour
                 {
                     SceneManager.LoadScene("titleScreen");
                 }
+                }
+                else
+                {
+                    SceneManager.LoadScene("GuestScreen");
+                }
             }
         }
     }
@@ -49,7 +56,9 @@ public class CovidManager : MonoBehaviour
     public void titleScreen()
     {
         {
-            if (PlayerPrefs.GetString("Theme") == "Yellow")
+            if (PlayerPrefs.GetString("Role") == "Normal")
+            {
+                if (PlayerPrefs.GetString("Theme") == "Yellow")
             {
                 SceneManager.LoadScene("NormalYellow");
             }
@@ -72,6 +81,11 @@ public class CovidManager : MonoBehaviour
             else
             {
                 SceneManager.LoadScene("titleScreen");
+            }
+            }
+            else
+            {
+                SceneManager.LoadScene("GuestScreen");
             }
         }
     }

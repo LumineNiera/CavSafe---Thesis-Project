@@ -16,7 +16,9 @@ public class EHManager : MonoBehaviour
 
     public void UpdateScene()
     {
-        if (PlayerPrefs.GetString("Theme") == "Yellow")
+        if (PlayerPrefs.GetString("Role") == "Normal")
+        {
+            if (PlayerPrefs.GetString("Theme") == "Yellow")
         {
             SceneManager.LoadScene("NormalYellow");
         }
@@ -40,37 +42,49 @@ public class EHManager : MonoBehaviour
         {
             SceneManager.LoadScene("titleScreen");
         }
+        }
+        else
+        {
+            SceneManager.LoadScene("GuestScreen");
+        }
     }
     // Update is called once per frame
     void Update(){
         if (Application.platform == RuntimePlatform.Android){
             if (Input.GetKeyDown(KeyCode.Escape))
             {
-                if (PlayerPrefs.GetString("Theme") == "Yellow")
+                if (PlayerPrefs.GetString("Role") == "Normal")
                 {
-                    SceneManager.LoadScene("NormalYellow");
-                }
-                else if (PlayerPrefs.GetString("Theme") == "Green")
-                {
-                    SceneManager.LoadScene("NormalGreen");
-                }
-                else if (PlayerPrefs.GetString("Theme") == "Red")
-                {
-                    SceneManager.LoadScene("NormalRed");
-                }
-                else if (PlayerPrefs.GetString("Theme") == "Black")
-                {
-                    SceneManager.LoadScene("NormalBlack");
-                }
-                else if (PlayerPrefs.GetString("Theme") == "Violet")
-                {
-                    SceneManager.LoadScene("NormalViolet");
+                    if (PlayerPrefs.GetString("Theme") == "Yellow")
+                    {
+                        SceneManager.LoadScene("NormalYellow");
+                    }
+                    else if (PlayerPrefs.GetString("Theme") == "Green")
+                    {
+                        SceneManager.LoadScene("NormalGreen");
+                    }
+                    else if (PlayerPrefs.GetString("Theme") == "Red")
+                    {
+                        SceneManager.LoadScene("NormalRed");
+                    }
+                    else if (PlayerPrefs.GetString("Theme") == "Black")
+                    {
+                        SceneManager.LoadScene("NormalBlack");
+                    }
+                    else if (PlayerPrefs.GetString("Theme") == "Violet")
+                    {
+                        SceneManager.LoadScene("NormalViolet");
+                    }
+                    else
+                    {
+                        SceneManager.LoadScene("titleScreen");
+                    }
                 }
                 else
                 {
-                    SceneManager.LoadScene("titleScreen");
+                    SceneManager.LoadScene("GuestScreen");
                 }
-            }
+                }
         }
     }
 
