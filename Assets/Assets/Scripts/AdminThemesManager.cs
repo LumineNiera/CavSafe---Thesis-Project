@@ -176,6 +176,35 @@ public void GreenButton()
 
     }
 
+public void Refresh()
+    {
+        if (PlayerPrefs.GetString("Theme") == "Yellow")
+        {
+            SceneManager.LoadScene("ThemesYellow");
+        }
+        else if (PlayerPrefs.GetString("Theme") == "Green")
+        {
+            SceneManager.LoadScene("ThemesGreen");
+        }
+        else if (PlayerPrefs.GetString("Theme") == "Red")
+        {
+            SceneManager.LoadScene("ThemesRed");
+        }
+        else if (PlayerPrefs.GetString("Theme") == "Black")
+        {
+            SceneManager.LoadScene("ThemesBlack");
+        }
+        else if (PlayerPrefs.GetString("Theme") == "Violet")
+        {
+            SceneManager.LoadScene("ThemesViolet");
+        }
+        else
+        {
+            SceneManager.LoadScene("Themes");
+        }
+    }
+
+
     void AndroidBack()
 {
 
